@@ -17,7 +17,7 @@ class UserViewHolder(
                 .into(ivUser)
             tvUser.text = user.username
             root.setOnClickListener {
-                onUserClick.invoke(user.userId)
+                onUserClick.invoke(user.username)
             }
         }
     }

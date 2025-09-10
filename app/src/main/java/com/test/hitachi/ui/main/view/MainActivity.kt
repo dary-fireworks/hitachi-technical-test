@@ -1,11 +1,13 @@
 package com.test.hitachi.ui.main.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.test.hitachi.adapter.UserAdapter
 import com.test.hitachi.databinding.ActivityMainBinding
+import com.test.hitachi.ui.detail.view.UserDetailActivity
 import com.test.hitachi.ui.main.presenter.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,7 +18,10 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels()
 
     private val userAdapter = UserAdapter {
-
+        val intent = Intent(this@MainActivity, UserDetailActivity::class.java).apply {
+            putExtra("username", it)
+        }
+        startActivity(intent)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
