@@ -76,4 +76,13 @@ dependencies {
     //Glide
     implementation(libs.glide)
     kapt(libs.glide.compiler)
+
+    // Mockito
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.core.testing)
+    testImplementation(libs.coroutines.test)
+
+    implementation(libs.espresso)
 }
