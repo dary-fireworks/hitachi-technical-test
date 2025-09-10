@@ -9,6 +9,7 @@
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
         android:background="@color/black">
 
         <androidx.appcompat.widget.AppCompatImageView

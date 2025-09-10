@@ -9,6 +9,7 @@ import com.test.hitachi.adapter.UserAdapter
 import com.test.hitachi.databinding.ActivityMainBinding
 import com.test.hitachi.ui.detail.view.UserDetailActivity
 import com.test.hitachi.ui.main.presenter.MainViewModel
+import com.test.hitachi.ui.search.view.SearchUserActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,6 +41,10 @@ class MainActivity : AppCompatActivity() {
             rvUsers.apply {
                 layoutManager = LinearLayoutManager(this@MainActivity)
                 adapter = userAdapter
+            }
+            ivSearch.setOnClickListener {
+                val intent = Intent(this@MainActivity, SearchUserActivity::class.java)
+                startActivity(intent)
             }
         }
     }
